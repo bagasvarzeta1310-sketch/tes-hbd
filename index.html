@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD Sayang! ❤️</title>
+    <style>
+        body {
+            display: flex; justify-content: center; align-items: center;
+            height: 100vh; margin: 0; background-color: #ffe4e1;
+            font-family: 'Arial', sans-serif; text-align: center;
+        }
+        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        h1 { color: #ff4d6d; }
+        .buttons { margin-top: 30px; position: relative; height: 50px; }
+        button {
+            padding: 10px 25px; font-size: 18px; border: none;
+            border-radius: 10px; cursor: pointer; transition: 0.3s;
+        }
+        #yesBtn { background-color: #ff4d6d; color: white; margin-right: 10px; }
+        #noBtn { background-color: #ccc; color: #333; position: absolute; }
+        #message { display: none; margin-top: 20px; color: #ff4d6d; font-weight: bold; }
+        img { width: 150px; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1eHByZzR3eHByZzR3eHByZzR3eHByZzR3eHByZzR3JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiMKdJ/giphy.gif" alt="Cute Cat">
+        <h1 id="question">Hai Sayang, Kamu Mau Gak Rayain Ultah Bareng Aku? ❤️</h1>
+        
+        <div class="buttons">
+            <button id="yesBtn" onclick="celebrate()">MAU! 😍</button>
+            <button id="noBtn" onmouseover="moveButton()">GAK 😜</button>
+        </div>
+
+        <div id="message">
+            <h2>SELAMAT ULANG TAHUN! 🎉🎂</h2>
+            <p>Aku sayang banget sama kamu! Cek kado asli di bawah bantal ya! ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            const btn = document.getElementById('noBtn');
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function celebrate() {
+            document.getElementById('question').style.display = 'none';
+            document.querySelector('.buttons').style.display = 'none';
+            document.getElementById('message').style.display = 'block';
+            // Tambahkan efek konfeti kalau mau lebih ramai!
+            alert('YAY! I LOVE YOU! ❤️');
+        }
+    </script>
+</body>
+</html>
